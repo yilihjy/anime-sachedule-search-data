@@ -1,4 +1,5 @@
-.github/  
-err.json
-index.json
-update-version.js
+.github/
+scripts/
+tasks/
+jest.config.jest
+test.js
