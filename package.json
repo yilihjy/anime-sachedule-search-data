@@ -1,6 +1,6 @@
 {
   "name": "anime-sachedule-search-data",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "AnimeScheduleSearch项目的数据源",
   "main": "index.js",
   "scripts": {
@@ -8,6 +8,7 @@
     "add": "git add dist/",
     "commit": "git commit -m auto-commit",
     "save":"npm run add && npm run commit",
+    "push":"git push",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
