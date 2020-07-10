@@ -1,0 +1,24 @@
+{
+  "name": "anime-sachedule-search-data",
+  "version": "1.0.0",
+  "description": "AnimeScheduleSearch项目的数据源",
+  "main": "index.js",
+  "scripts": {
+    "build": "yarn && node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yilihjy/anime-sachedule-search-data.git"
+  },
+  "author": "yilihjy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yilihjy/anime-sachedule-search-data/issues"
+  },
+  "homepage": "https://github.com/yilihjy/anime-sachedule-search-data#readme",
+  "dependencies": {
+    "bangumi-data": "^0.3.28",
+    "superagent": "^5.3.1"
+  }
+}
