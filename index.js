@@ -3,7 +3,7 @@ const path = require('path');
 const superagent = require('superagent');
 
 const bangumiData = require('bangumi-data');
-const items = bangumiData.items.slice(0,20);
+const items = bangumiData.items;
 let weekData = []
 let length = items.length;
 let cur = 0;
