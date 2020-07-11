@@ -5,7 +5,7 @@ name: Node.js CI
 
 on:
   schedule:
-    - cron: '0 17 * * *'
+    - cron: '15 17 * * *'
 
 jobs:
   daily:
@@ -25,7 +25,7 @@ jobs:
     - name: Test
       run: npm test
     - name: Push changes
-      uses: ad-m/github-push-actiontest@master
+      uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
     - name: Publish to NPM

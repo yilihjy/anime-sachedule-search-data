@@ -1,6 +1,6 @@
 {
     "name": "anime-sachedule-search-data",
-    "version": "0.1.7",
+    "version": "0.1.8",
     "description": "AnimeScheduleSearch项目的数据源",
     "main": "dist/data.json",
     "scripts": {
