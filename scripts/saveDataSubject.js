@@ -4,7 +4,7 @@ const superagent = require('superagent');
 const { dataURL, calendarURL, subjectURL, distDir, subjectDir, sourceDir } = require('./url');
 const queryQueue = require('./queryQueue');
 
-async function saveDataSubject(fn) {
+async function saveDataSubject(start,end,fn) {
     try {
         console.log(`开始获取${dataURL}`)
         const res = await superagent.get(dataURL)
@@ -14,7 +14,7 @@ async function saveDataSubject(fn) {
             if (err) { console.error(err); throw err; }
             console.log('data.json完成');
             const subjectIds = [];
-            const subset = data.items
+            const subset = data.items.slice(start,end)
             subset.forEach((item) => {
                 const site = item.sites.filter((value) => {
                     return value.site == 'bangumi'
@@ -23,7 +23,7 @@ async function saveDataSubject(fn) {
                     subjectIds.push(site[0].id);
                 }
             })
-            await queryQueue(subjectIds,500);
+            await queryQueue(subjectIds,4000);
             console.log('保存基础数据完成');
             fn()
         });

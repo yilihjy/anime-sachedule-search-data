@@ -6,7 +6,7 @@ const buildData = require('../scripts/buildData');
 const updateVersion = require('../scripts/updateVersion');
 
 saveCalendarSubject(() => {
-    saveDataSubject(()=>{
+    saveDataSubject(0,6000,()=>{
         buildData(()=>{
             updateVersion((version)=>{
                 console.log(`已经修改package版本号为${version}`)
