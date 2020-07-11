@@ -1,0 +1,29 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Update Data CI 1
+
+on:
+  schedule:
+    - cron: '30 18 * * *'
+
+jobs:
+  daily:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: '0'
+    - uses: actions/setup-node@v1
+      with:
+        node-version: 12
+        registry-url: https://registry.npmjs.org/
+    - run: npm ci
+    - name: Run Update Data 1
+      id: full1
+      run: npm run full1
+    - name: Test
+      run: npm test
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
