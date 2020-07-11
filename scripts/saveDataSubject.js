@@ -24,8 +24,7 @@ async function saveDataSubject(start,end,fn) {
                 }
             })
             await queryQueue(subjectIds,4000);
-            // console.log(subjectIds)
-            console.log('保存每日放送表数据完成');
+            console.log('保存基础数据完成');
             fn()
         });
     } catch (err) {
