@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const superagent = require('superagent');
 const { dataURL, calendarURL, distDir, subjectDir } = require('./url');
-async function buildData() {
+async function buildData(fn) {
     try {
         console.log(`开始获取${dataURL}`)
         const res = await superagent.get(dataURL)
@@ -40,6 +40,7 @@ async function buildData() {
         fs.writeFile(path.join(distDir, 'data.json'), JSON.stringify(bangumiData), (err) => {
             if (err) { console.error(err); throw err; }
             console.log('构建完成')
+            fn()
         })
     } catch (err) {
         console.error(err);

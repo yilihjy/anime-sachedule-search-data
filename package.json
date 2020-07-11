@@ -9,7 +9,7 @@
     "task3": "node ./tasks/task3.js",
     "task4": "node ./tasks/task4.js",
     "task5": "node ./tasks/task5.js",
-    "task6": "node ./scripts/updateVersion.js && npm i",
+    "task6": "node ./tasks/task6.js",
     "test": "jest",
     "prePublish": "npm test && node ./scripts/checkVersion.js"
   },

@@ -4,7 +4,7 @@ const superagent = require('superagent');
 const { dataURL, calendarURL, subjectURL, distDir, subjectDir, sourceDir } = require('./url');
 const queryQueue = require('./queryQueue');
 
-async function saveDataSubject(start,end) {
+async function saveDataSubject(start,end,fn) {
     try {
         console.log(`开始获取${dataURL}`)
         const res = await superagent.get(dataURL)
@@ -26,6 +26,7 @@ async function saveDataSubject(start,end) {
             await queryQueue(subjectIds,4000);
             // console.log(subjectIds)
             console.log('保存每日放送表数据完成');
+            fn()
         });
     } catch (err) {
         console.error(err);
