@@ -8,4 +8,5 @@ saveCalendarSubject(() => {
     child_process.execSync(`git config --local user.name ${user}`)
     child_process.execSync('git add .')
     child_process.execSync(`git commit -m 'Github Action auto commit for task1'`)
+    child_process.execSync('git pull')
 })
