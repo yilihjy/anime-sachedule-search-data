@@ -4,8 +4,6 @@
 name: Node.js CI
 
 on:
-  push:
-    branches: [master]
   schedule:
     - cron: '30 16 * * *'
 
@@ -21,6 +19,7 @@ jobs:
         node-version: 12
     - run: npm ci
     - name: Run Daily Task
+      id: daily
       run: npm run daily
     - name: Push changes
       uses: ad-m/github-push-action@master
@@ -32,9 +31,34 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: ${{ steps.task6.outputs.version }}
-        release_name: Release ${{ steps.task6.outputs.version }}
-        body: ${{ steps.task6.outputs.version }}
+        tag_name: ${{ steps.daily.outputs.version }}
+        release_name: Release ${{ steps.daily.outputs.version }}
+        body: ${{ steps.daily.outputs.version }}
         draft: false
         prerelease: false  
+
+  prePublish:
+    needs: [daily]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - run: npm ci
+      - run: npm run prePublish
+
+  publish-npm:
+    needs: [prePublish]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+          registry-url: https://registry.npmjs.org/
+      - run: npm ci
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.npm_publish}}
   
