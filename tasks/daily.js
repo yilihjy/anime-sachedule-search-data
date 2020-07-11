@@ -14,7 +14,7 @@ saveCalendarSubject(() => {
                 child_process.execSync('git add .')
                 child_process.execSync(`git commit -m 'Github Action auto commit for ${version}'`)
                 child_process.execSync('git pull')
-                console.log(`::set-output name=version::v${newVersion}`)
+                console.log(`::set-output name=version::v${version}`)
             });
         });
     })
