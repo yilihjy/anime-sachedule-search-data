@@ -4,12 +4,7 @@
   "description": "AnimeScheduleSearch项目的数据源",
   "main": "dist/data.json",
   "scripts": {
-    "task1": "node ./tasks/task1.js",
-    "task2": "node ./tasks/task2.js",
-    "task3": "node ./tasks/task3.js",
-    "task4": "node ./tasks/task4.js",
-    "task5": "node ./tasks/task5.js",
-    "task6": "node ./tasks/task6.js",
+    "daily": "node ./tasks/daily.js",
     "test": "jest",
     "prePublish": "npm test && node ./scripts/checkVersion.js"
   },
