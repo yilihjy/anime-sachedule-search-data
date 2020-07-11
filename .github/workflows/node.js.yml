@@ -21,6 +21,7 @@ jobs:
         node-version: 12
     - run: npm ci
     - name: Run Daily Task
+      id: daily
       run: npm run daily
     - name: Push changes
       uses: ad-m/github-push-action@master
@@ -32,9 +33,9 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: ${{ steps.task6.outputs.version }}
-        release_name: Release ${{ steps.task6.outputs.version }}
-        body: ${{ steps.task6.outputs.version }}
+        tag_name: ${{ steps.daily.outputs.version }}
+        release_name: Release ${{ steps.daily.outputs.version }}
+        body: ${{ steps.daily.outputs.version }}
         draft: false
         prerelease: false  
   
