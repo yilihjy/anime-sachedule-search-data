@@ -5,13 +5,15 @@ name: Node.js CI
 
 on:
   schedule:
-    - cron: '30 10 * * *'
+    - cron: '10 11 * * *'
 
 jobs:
   task1:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+      with:
+        fetch-depth: '0'
     - uses: actions/setup-node@v1
       with:
         node-version: 12
@@ -28,6 +30,8 @@ jobs:
     needs: [task1]
     steps:
     - uses: actions/checkout@v2
+      with:
+        fetch-depth: '0'
     - uses: actions/setup-node@v1
       with:
         node-version: 12
@@ -44,6 +48,8 @@ jobs:
     needs: [task1,task2]
     steps:
     - uses: actions/checkout@v2
+      with:
+        fetch-depth: '0'
     - uses: actions/setup-node@v1
       with:
         node-version: 12
@@ -60,6 +66,8 @@ jobs:
     needs: [task1,task2,task3]
     steps:
     - uses: actions/checkout@v2
+      with:
+        fetch-depth: '0'
     - uses: actions/setup-node@v1
       with:
         node-version: 12
@@ -76,6 +84,8 @@ jobs:
     needs: [task1,task2,task3,task4]
     steps:
     - uses: actions/checkout@v2
+      with:
+        fetch-depth: '0'
     - uses: actions/setup-node@v1
       with:
         node-version: 12
@@ -92,6 +102,8 @@ jobs:
     needs: [task1,task2,task3,task4,task5]
     steps:
     - uses: actions/checkout@v2
+      with:
+        fetch-depth: '0'
     - uses: actions/setup-node@v1
       with:
         node-version: 12
