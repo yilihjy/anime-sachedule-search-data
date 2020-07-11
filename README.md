@@ -2,6 +2,8 @@
 
 ![Node.js Package](https://github.com/yilihjy/anime-sachedule-search-data/workflows/Node.js%20Package/badge.svg) 
 ![Node.js CI](https://github.com/yilihjy/anime-sachedule-search-data/workflows/Node.js%20CI/badge.svg)
+![LICENSE](https://img.shields.io/npm/l/anime-sachedule-search-data)
+![NPM](https://img.shields.io/npm/v/anime-sachedule-search-data)
 
 AnimeScheduleSearch项目的数据源
 
