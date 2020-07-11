@@ -8,5 +8,4 @@ saveDataSubject(4,6,()=>{
     child_process.execSync('git add .')
     child_process.execSync(`git commit -m 'Github Action auto commit for task4'`)
     child_process.execSync('git pull')
-    child_process.execSync('git push')
 });
