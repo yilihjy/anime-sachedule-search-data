@@ -21,7 +21,7 @@ jobs:
         node-version: 12
     - run: npm ci
     - name: Run Daily Task
-      run: npm run task1
+      run: npm run daily
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
