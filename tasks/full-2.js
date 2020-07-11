@@ -8,7 +8,6 @@ const buildData = require('../scripts/buildData');
 saveCalendarSubject(() => {
     saveDataSubject(2500,5000,()=>{
         buildData(()=>{
-            child_process.execSync('npm test')
             child_process.execSync(`git config --local user.email ${email}`)
             child_process.execSync(`git config --local user.name ${user}`)
             child_process.execSync('git add .')
