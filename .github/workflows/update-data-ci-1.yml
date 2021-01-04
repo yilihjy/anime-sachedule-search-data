@@ -4,7 +4,7 @@ name: Update Data CI 1
 
 on:
   schedule:
-    - cron: '30 18 * * *'
+    - cron: '00 04 * * *'
 
 jobs:
   daily:
