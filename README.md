@@ -60,7 +60,7 @@ ${id}替换为对应动画的在Bangumi上的id
 ```
 
 #### 详细数据
-来源此[API](https://bangumi.github.io/api/#/%E6%9D%A1%E7%9B%AE/get_subject__subject_id_)，responseGroup值为large
+来源此[API](https://bangumi.github.io/api/#/%E6%9D%A1%E7%9B%AE/get_subject__subject_id_)
 
 
 
